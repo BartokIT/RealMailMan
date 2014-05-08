@@ -7,6 +7,10 @@
 	add_to_debug("Azione",  $action);
 	switch ($action)
 	{
+		case "logout":
+			session_unset();
+			session_destroy();
+		return new ReturnedArea("default","default");
 		default:
 		case "":
 			/* Show the list of the years*/

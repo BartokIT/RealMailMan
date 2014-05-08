@@ -19,4 +19,7 @@ $new = new Flusso("clp","nodo_principale");
 		
 $nome_file = $new->elaborates();
 //echo sha1("postinopostino");
+echo "<pre>";
+var_dump($_SESSION);
+echo "</pre>";
 ?>

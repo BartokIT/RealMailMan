@@ -324,6 +324,11 @@ class Flusso
 					{						
 						$this->page =  "presentation/" . $returned_page; 
 						$p=$ret_object->parameters;
+						$p["site_view"]=$this->get_site_view();
+						if (isset($_SESSION["user_detail"]))
+						{
+							$p["user"]=(object)$_SESSION["user_detail"];
+						}
 						include "presentation/" . $returned_page;					
 						
 					}

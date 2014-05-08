@@ -14,7 +14,10 @@
     		if (empty($user_detail))
     			return new ReturnedPage("default.php");                		
     		else if (strcmp($user_detail["password"],sha1($user . $password)) == 0)
-    			return new ReturnedArea("clpservice","default");
+    		{
+				$_SESSION["user_detail"]=array("name"=>$user_detail["name"]);
+				return new ReturnedArea("clpservice","default");
+			}
 		else    			
     			return new ReturnedPage("default.php");            
 		    break;	
